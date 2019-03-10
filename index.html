@@ -54,13 +54,16 @@
     <div class="container gems">
         <div class="row">
           <div class="col-sm-3 gem1">
-           img1
+           <img id="gem1" data-value="" src="" alt="img1">
           </div>
           <div class="col-sm-3 gem2">
-            img2
+                <img id="gem2" data-value="" src="" alt="img2">
           </div>
           <div class="col-sm-3 gem3">
-            img2
+                <img id="gem3" data-value="" src="" alt="img3">
+          </div>
+          <div class="col-sm-3 gem4">
+                <img id="gem4" data-value="" src="" alt="img4">
           </div>
         </div>
       </div>
@@ -79,6 +82,29 @@
 
 
 <script>
+
+/*
+asign random number to echa criystla 1 - 12.
+aasign random number to the game (target) 9-120
+display target
+on click of gems, sum values to userScore
+compare target vs userScore
+if target reached end game it's a win
+if userScore over target end game its a loose
+reset game new target an gems values
+vars:
+gameOver
+target
+userTotal
+wins
+losses
+crystal1
+crustal2
+crystal3
+crystal4
+*/
+
+
     $(document).ready(function () {
         console.log("page ready!");
     });
