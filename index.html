@@ -1,194 +1,108 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
 
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+	<meta charset="UTF-8" />
 
-		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-		<script src="http://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
-		<link rel="stylesheet" href="assets/css/reset.css" />
+	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
 
-		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+	<script src="http://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+		crossorigin="anonymous"></script>
+	<link rel="stylesheet" href="assets/css/reset.css" />
 
-		<link rel="stylesheet" href="assets/css/style.css" />
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+		integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
 
-		<title>CrystalCollector</title>
-	</head>
-	<body>
-		/*
-*/		<div class="container">
-			<p>Cristal Collector</p>
-		</div>
-		<div class="container bg-success instructions">
-			<p>You will be given a random number as the start of the game.</p>
-			<br />
+	<link rel="stylesheet" href="assets/css/style.css" />
 
-			<p>There are four crsytals below. By clicking on a crystal you will add aspecific amount of points to your total
-            score.
-			</p>
-			<br />
+	<title>CrystalCollector</title>
+</head>
 
-			<p>You win the game by matching youe total score to random number, you loose the game if your total score goes
-            above the random number.
-			</p>
-			<br />
+<body class="bg-transparent">
 
-			<p>The value of each crystal id hidden from you until you click on it.</p>
-			<br />
+	<div class="container">
+		<p class="title">Cristal Collector</p>
+	</div>
+	<div class="container instructions">
+		<p>You will be given a random number as the start of the game.</p>
+		<p>There are four crsytals below. By clicking on a crystal you will add aspecific amount of points to your total
+			score.</p>
+		<p>You win the game by matching youe total score to random number, you loose the game if your total
+			score goes above the random number.</p>
+		<p>The value of each crystal id hidden from you until you click on it.</p>
+		<p>Each time when the game starts, the game will change the values of each crystal.</p>
+	</div>
+	<div class="container scores">
+		<div class="row">
+			<div class="col-sm-4 target">
+				<p>Target
+					<br />
 
-			<p>Each time when the game starts, the game will change the values of each crystal.</p>
-		</div>
-		<div class="container scores">
-			<div class="row">
-				<div class="col-sm-4">
-					<p>Target
-						<br />
-
-						<span id="randomNumber">x</span>
-					</p>
-				</div>
-				<div class="col-sm-4">
-					<p>Your Game Stats
-						<br />
-
-						<span id="userStats">x</span>
-					</p>
+					<span id="randomNumber"></span>
+				</p>
+			</div>
+			<div class="col-sm-4 stats">
+				<div class="row ">
+					<div class="col-xm-3">
+						<p>Your Game Stats</p>
+						<p>Wins: <span id="wins-txt"></span></p>
+						<p>Losses: <span id="losses-txt"></span></p>
+					</div>
 				</div>
 			</div>
 		</div>
-		<div class="container gems">
-			<div class="row">
-				<div class="col-xm-3 gem1">
-					<img id="gem1" data-value="" src="" alt="img1" />
-
-				</div>
-				<div class="col-xm-3 gem2">
-					<img id="gem2" data-value="" src="" alt="img2" />
-
-				</div>
-				<div class="col-xm-3 gem3">
-					<img id="gem3" data-value="" src="" alt="img3" />
-
-				</div>
-				<div class="col-xm-3 gem4">
-					<img id="gem4" data-value="" src="" alt="img4" />
-
-				</div>
+	</div>
+	<div class="container gems">
+		<div class="row ">
+			<div class="col-xm-3  gem1">
+				<img id="gem1" data-value="" src="assets/images/c1.png" alt="img1" />
+			</div>
+			<div class="col-xm-3  gem2">
+				<img id="gem2" data-value="" src="assets/images/c2.png" alt="img2" />
+			</div>
+			<div class="col-xm-3  gem3">
+				<img id="gem3" data-value="" src="assets/images/c3.png" alt="img3" />
+			</div>
+			<div class="col-xm-3  gem4">
+				<img id="gem4" data-value="" src="assets/images/c4.png" alt="img4" />
 			</div>
 		</div>
-		<div class="container">
-			<div class="row">
-				<div class="col-sm-6 totalScore">
-					<p>Your total score is:</p>
-				</div>
-				<div class="col-sm-6 ">
-					<p id="totalScore">x</p>
-				</div>
+	</div>
+	<div class="container totalScore">
+		<div class="row">
+			<div class="col-sm-6">
+				<p>Your total score is:</p>
 			</div>
-			
-			<!-- <script src="assets/javascript/gamecc.js"> -->
-				<script>
-/*
-asign random number to echa criystla 1 - 12.
-aasign random number to the game (target) 9-120
-display target
-on click of gems, sum values to userScore
-compare target vs userScore
-if target reached end game it's a win
-if userScore over target end game its a loose
-reset game new target an gems values
-vars:
-gameOver
-target
-userTotal
-
-wins
-losses
-crystal1
-crustal2
-crystal3
-crystal4
-*/
-
-
-
-
-    $(document).ready(function () {
-
-var wins = 0;
-var losses=0;
-var target=0;
-var userTotal=0;
-var gameOver=false;
-var gem=[0, 0, 0, 0];
-
-        
-   function reset(){
-	target=0;	
-	userTotal=0; 
-	gameOver=false;  
-   for (var i=0;
-   i < gem.length;
-   i++) {
-	   gem[i]=(Math.floor((Math.random() * 12) + 1));
-	   
-   }
-   target=(Math.floor((Math.random() * 112) + 9));
-   console.log(gem);
-   console.log("target.."+target);
-   }
-
-  
-		reset();
-		
-		
-if(userTotal==target){
-	wins++;
-	gameOver=true;
-	console.log("wins.." +wins);
-	setTimeout(reset,3000);
-}else if(target>userTotal){ 
-	losses++;
-	gameOver=false;
-	console.log("wins.." +losses);
-	setTimeout(reset,3000);
-}
- //  if(!gameOver) {  
-     $("#gem1").click(function(){
-		userTotal=userTotal+gem[0];
-$("#totalScore").text(userTotal);
-});
-$("#gem2").click(function(){
-		userTotal=userTotal+gem[1];
-$("#totalScore").text(userTotal);
-
-});
-	 
-$("#gem3").click(function(){
-		userTotal=userTotal+gem[2];
-$("#totalScore").text(userTotal);
-
-});     
-
-$("#gem4").click(function(){
-		userTotal=userTotal+gem[3];
-$("#totalScore").text(userTotal);
-
-});
-
-
-  // }
-        
-    });
-
-
-
-			</script>
-			<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-			<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-			<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 		</div>
-	</body>
+
+		<div class="row">
+			<div class="col-sm-6 ">
+				<p id="totalScore"></p>
+			</div>
+		</div>
+	</div>
+	<div class="container">
+		<div class="row justify-content-center">
+			<div class="col-xm-6 align-self-center">
+				<button onClick="location.href=location.href" class="btn btn-dark">Reset Scores</button>
+			</div>
+		</div>
+	</div>
+
+
+
+	<script src="assets/javascript/game.js"></script>
+	
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+		integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+		crossorigin="anonymous"></script>
+
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+		integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+		crossorigin="anonymous"></script>
+	</div>
+</body>
+
 </html>
