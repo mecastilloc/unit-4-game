@@ -92,6 +92,7 @@ $(document).ready(function () {
 		$("#wins-txt").text(wins);
 		$("#losses-txt").text(losses);
 		console.log("--------game start---------");
+		console.log(target);
 		console.log(gem);
 
 	}
