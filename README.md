@@ -1,7 +1,7 @@
 # unit-4-game
 JQuery homework Crystal Collector
 
-[Live Demo](https://mecastilloc.github.io/Responsive-Portfolio/portfolio.html)
+[Live Demo](https://mecastilloc.github.io/unit-4-gamecc/index.html)
  
 
 Logic made with Jquery
